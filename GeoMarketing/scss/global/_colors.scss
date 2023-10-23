@@ -1,0 +1,28 @@
+$time: 350ms;
+
+// DEFAULT COLORS
+$white: hsl(0, 0%, 100%); //#ffffff
+$black: hsl(0, 0%, 0%); //#000000
+
+// THEME-COLORS
+$primary: hsl(234, 17%, 12%); //#191A23
+$secondary: hsl(220, 100%, 70%); //#669AFF
+
+// BACKGROUND-COLORS
+$grey: hsl(0, 0%, 95%); //#F3F3F3
+$dark: hsl(233, 10%, 18%); //#292A32
+
+// TEXT-COLORS
+$textplaceholder: hsl(0, 0%, 54%); //#898989
+
+$danger: hsl(0, 91%, 54%); //#F51F1F
+$success: hsl(152, 69%, 31%); //#198754
+
+// BORDER-COLORS
+$inputborder: #e3e3e3; //#E4E4E4
+
+// SHADOWS
+
+// BOX-SHADOWS
+$headershadow: 0 .25rem 1.875rem rgba($black, 0.1);
+$cardshadow: 0 .3125rem 0 0 $primary;

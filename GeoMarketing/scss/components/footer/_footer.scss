@@ -1,0 +1,152 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.footer {
+  .footerinfo {
+    background: $primary;
+    @include double-radius(top, left, 45, top, right, 45);
+    @include flex-column;
+    gap: size(48);
+    padding: size(48) size(16);
+
+    @include breakpoint(tab992) {
+      padding: size(55) size(60);
+    }
+  }
+
+  .topinfo {
+    padding-bottom: size(48);
+    @include border-single(bottom, solid, 1, $white);
+
+    .footerdetail {
+      @include flex-column;
+      gap: size(48);
+
+      @include breakpoint(tab992) {
+        gap: size(64);
+      }
+
+      .details {
+        @include flex-column;
+        gap: size(24);
+
+        .footertitle {
+          @include setBgColor($secondary, $black);
+          @include radius(8);
+          font-size: size(16);
+          font-weight: 500;
+          display: inline-block;
+          max-width: size(112);
+          padding: size(4) size(8);
+          text-align: center;
+
+          @include breakpoint(desktop1800) {
+            font-size: size(20);
+          }
+        }
+
+        .addressinfo {
+          .text {
+            color: $white;
+
+            @include breakpoint(desktop1800) {
+              font-size: size(18);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .textcopyright {
+    color: $white;
+
+    @include breakpoint(desktop1800) {
+      font-size: size(18);
+    }
+  }
+
+  .footerlist {
+    @include list-vertical;
+    gap: size(20);
+    text-align: left;
+
+    &-link {
+      color: $white;
+      text-decoration: underline;
+
+      @include breakpoint(desktop1800) {
+        font-size: size(18);
+      }
+
+      @include hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  .footlist {
+    @include list-vertical;
+    gap: size(16);
+
+    @include breakpoint(tab992) {
+      flex-direction: row;
+      gap: size(32);
+    }
+
+    &-link {
+      color: $white;
+      text-decoration: underline;
+
+      @include breakpoint(desktop1800) {
+        font-size: size(18);
+      }
+
+      @include hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  .footlink {
+    color: $white;
+    text-decoration: underline;
+
+    @include breakpoint(desktop1800) {
+      font-size: size(18);
+    }
+
+    @include hover {
+      color: $secondary;
+    }
+  }
+
+  .topdetail {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(64);
+    }
+  }
+
+  .subscribe {
+    background: $dark;
+    @include radius(14);
+    padding: size(60) size(40);
+
+    .contactform {
+      .inputbox {
+        .form-control {
+          @include radius(14);
+          @include setBgColor(transparent, $white);
+          padding: size(11) size(16);
+
+          &::placeholder {
+            color: $grey;
+          }
+        }
+      }
+    }
+  }
+}

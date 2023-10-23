@@ -1,0 +1,264 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.cardservice {
+  @include border(solid, 1, $primary);
+  @include radius(45);
+  box-shadow: $cardshadow;
+  padding: size(24);
+  @include flex-column;
+  gap: size(32);
+
+  @include breakpoint(mobile768) {
+    flex-direction: row;
+    align-items: center;
+    padding: size(50);
+    gap: size(48);
+  }
+
+  .lefcontent {
+    @include flex-column;
+    gap: size(93);
+    order: 1;
+
+    @include breakpoint(mobile768) {
+      order: 0;
+    }
+
+    .tags {
+      .tag {
+        @include radius(8);
+        display: inline-block;
+        font-size: size(20);
+        font-weight: 500;
+        padding: size(4) size(8);
+        box-decoration-break: clone;
+
+        @include breakpoint(desktop1800) {
+          font-size: size(30);
+        }
+      }
+    }
+
+    .learnmore {
+      @include flex-center-vert;
+      gap: size(15);
+
+      .icon {
+        @include square(41);
+        @include flex-center;
+        overflow: hidden;
+      }
+
+      .text {
+        color: $black;
+      }
+    }
+  }
+
+  .servicethumb {
+    @include flex-center;
+    overflow: hidden;
+    order: 0;
+
+    @include breakpoint(mobile768) {
+      order: 1;
+    }
+  }
+
+  &.service-1 {
+    background: $grey;
+
+    .lefcontent {
+      .tags {
+        .tag {
+          @include setBgColor($secondary, $black);
+        }
+      }
+    }
+  }
+
+  &.service-2 {
+    background: $secondary;
+
+    .lefcontent {
+      .tags {
+        .tag {
+          @include setBgColor($white, $black);
+        }
+      }
+    }
+  }
+
+  &.service-3 {
+    background: $primary;
+
+    .lefcontent {
+      .tags {
+        .tag {
+          @include setBgColor($white, $black);
+        }
+      }
+
+      .learnmore {
+        .text {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &.service-4 {
+    background: $grey;
+
+    .lefcontent {
+      .tags {
+        .tag {
+          @include setBgColor($secondary, $black);
+        }
+      }
+    }
+  }
+
+  &.service-5 {
+    background: $secondary;
+
+    .lefcontent {
+      .tags {
+        .tag {
+          @include setBgColor($white, $black);
+        }
+      }
+    }
+  }
+
+  &.service-6 {
+    background: $primary;
+
+    .lefcontent {
+      .tags {
+        .tag {
+          @include setBgColor($white, $black);
+        }
+      }
+
+      .learnmore {
+        .text {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.cardteam {
+  @include border(solid, 1, $primary);
+  @include radius(45);
+  box-shadow: $cardshadow;
+  @include flex-column;
+  gap: size(24);
+  padding: size(40) size(24);
+  @include h100;
+
+  @include breakpoint(desktop1800) {
+    padding: size(40) size(35);
+  }
+
+  &-header {
+    @include border-single(bottom, solid, 1, $primary);
+    @include flex;
+    align-items: flex-start;
+    gap: size(16);
+    padding-bottom: size(24);
+
+    .teaminfo {
+      @include flex;
+      align-items: flex-end;
+      gap: size(16);
+
+      .avatar {
+        @include square(64);
+        @include flex-center;
+        overflow: hidden;
+      }
+
+      .detail {
+        .name {
+          font-weight: 500;
+        }
+
+        .designation {
+          font-size: size(15);
+
+          @include breakpoint(desktop1800) {
+            font-size: size(18);
+          }
+        }
+      }
+    }
+  }
+
+  &-body {
+    .info {
+      max-width: size(317);
+      min-height: size(96);
+
+      .text {
+        @include breakpoint(desktop1800) {
+          font-size: size(18);
+        }
+      }
+    }
+  }
+}
+
+.cardtestimonial {
+  @include flex-column;
+  gap: size(40);
+
+  &-header {
+    @include setBgColor(transparent, $white);
+    @include border(solid, 2, $secondary);
+    @include radius(45);
+    padding: size(20);
+    position: relative;
+
+    @include breakpoint(mobile768) {
+      padding: size(36);
+    }
+
+    @include breakpoint(tab992) {
+      padding: size(48) size(52);
+    }
+
+    .text {
+      color: inherit;
+    }
+
+    &::after {
+      content: url('data:image/svg+xml,<svg width="56" height="30" viewBox="0 0 56 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M54.5484 1.22621L28 29.1787L1.45164 1.22621L54.5484 1.22621Z" fill="%2321241D" stroke="%23669AFF"/></svg>');
+      position: absolute;
+      bottom: size(-38);
+      left: size(64);
+      width: size(64);
+      height: size(38);
+      @include flex-center;
+      overflow: hidden;
+    }
+  }
+
+  &-body {
+    padding-left: size(64);
+
+    .author {
+      color: $secondary;
+      font-size: size(20);
+      font-weight: 500;
+    }
+
+    .designation {
+      color: $white;
+      font-size: size(15);
+    }
+  }
+}

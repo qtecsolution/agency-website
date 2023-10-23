@@ -1,0 +1,11 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.main {
+  @include flex-column;
+  
+
+  @include breakpoint(tab992) {
+    
+  }
+}

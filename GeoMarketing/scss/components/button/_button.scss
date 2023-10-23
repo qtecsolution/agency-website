@@ -1,0 +1,75 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  @include transparent-button;
+  cursor: pointer;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  @include transitionsall;
+
+  @include breakpoint(desktop1800) {
+    font-size: size(20);
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.btn-hamburger {
+  @include square(48);
+  @include flex-center;
+  font-size: size(24);
+  overflow: hidden;
+
+  @include hover {
+    color: $secondary;
+  }
+}
+
+.btn-bordered {
+  @include border(solid, 1, $primary);
+  @include radius(14);
+  @include setBgColor($white, $black);
+  padding: size(11) size(20);
+
+  @include breakpoint(desktop1800) {
+    font-size: size(20);
+  }
+
+  @include hover {
+    @include setBgColor($black, $white);
+  }
+}
+
+.btn-main {
+  @include border(solid, 1, $primary);
+  @include radius(14);
+  @include setBgColor($primary, $white);
+  padding: size(18) size(35);
+
+  @include breakpoint(desktop1800) {
+    font-size: size(20);
+  }
+
+  @include hover {
+    @include setBgColor($white, $primary);
+    border-color: $primary;
+  }
+}
+
+.btn-subscribe {
+  @include setBgColor($secondary, $white);
+  padding: size(11) size(35);
+
+  @include hover {
+    @include setBgColor(transparent, $secondary);
+    border-color: $secondary;
+  }
+}

@@ -1,0 +1,77 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.desktoplist {
+  @include list-horizontal;
+
+  &-link {
+    color: $black;
+    font-size: size(16);
+    font-weight: 500;
+    padding: size(21) size(16);
+
+    @include breakpoint(desktop1800) {
+      font-size: size(20);
+    }
+
+    @include hover {
+      color: $secondary;
+    }
+  }
+}
+
+.mobilelist {
+  @include list-vertical;
+
+  &-link {
+    color: $black;
+    font-size: size(14);
+    font-weight: 500;
+    padding: size(12) size(16);
+    @include w100;
+
+    @include hover {
+      color: $secondary;
+    }
+  }
+}
+
+.footerlist {
+  @include list-vertical;
+  gap: size(16);
+  text-align: center;
+
+  @include breakpoint(mobile768) {
+    flex-direction: row;
+    gap: size(32);
+    text-align: left;
+  }
+
+  &-link {
+    color: $black;
+    font-weight: 500;
+
+    @include hover {
+      color: $secondary;
+    }
+  }
+}
+
+.listsocial {
+  @include list-horizontal;
+  gap: size(16);
+
+  &-link {
+    @include square(26);
+    @include flex-center;
+    overflow: hidden;
+
+    @include hover {
+      svg {
+        path {
+          fill: $secondary;
+        }
+      }
+    }
+  }
+}

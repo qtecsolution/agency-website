@@ -1,0 +1,536 @@
+@use '../global' as *;
+@use '../partials' as *;
+
+.hero {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(70) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(35);
+  }
+}
+
+.ourclients {
+  padding-bottom: size(48);
+
+  @include breakpoint(tab992) {
+    padding-bottom: size(70);
+  }
+
+  .client-thumbnail {
+    img {
+      filter: grayscale(100);
+      @include transitionsall;
+    }
+
+    @include hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+
+.section-header {
+  @include flex-center-column;
+  gap: size(24);
+  text-align: center;
+
+  @include breakpoint(tab992) {
+    gap: size(40);
+  }
+
+  .info {
+    max-width: size(580);
+    margin-inline: auto;
+  }
+}
+
+.ourservices {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(70) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+}
+
+.casestudies {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(70) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+
+  .casestudy {
+    background: $primary;
+    @include radius(45);
+    padding: size(24);
+
+    @include breakpoint(mobile768) {
+      padding: size(48);
+    }
+
+    @include breakpoint(tab992) {
+      padding: size(64);
+    }
+
+    @include breakpoint(desktop1200) {
+      padding: size(70) size(64);
+    }
+
+    .casebox {
+      @include flex-column;
+      gap: size(20);
+
+      .caseinfo {
+        max-width: size(286);
+        min-height: size(144);
+
+        .casetext {
+          color: $white;
+        }
+      }
+
+      .caselink {
+        @include flex-center-vert;
+        gap: size(15);
+
+        .text {
+          color: $secondary;
+        }
+
+        .icon {
+          @include square(20);
+          @include flex-center;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .dividericon {
+      width: size(1);
+      height: size(186);
+      @include flex-center;
+      overflow: hidden;
+
+      svg {
+        width: auto;
+      }
+    }
+  }
+}
+
+.workingprogress {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(70) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+
+  .accordion {
+    @include flex-column;
+    gap: size(32);
+
+    &-item {
+      @include border(solid, 1, $primary);
+      @include radius(25);
+      box-shadow: $cardshadow;
+      overflow: hidden;
+
+      &:first-of-type,
+      &:last-of-type {
+        .accordion-button {
+          @include radius(0);
+        }
+      }
+    }
+
+    &-button {
+      box-shadow: none;
+      padding: size(32) size(24);
+
+      @include breakpoint(tab992) {
+        padding: size(30) size(60);
+      }
+
+      .btndescript {
+        @include flex-column;
+        gap: size(30);
+        @include w100;
+
+        .btninfo {
+          @include flex-center-vert;
+          gap: size(24);
+        }
+
+        .divider {
+          width: calc(100% + size(24));
+          height: size(1);
+          margin-inline: auto;
+          background: $primary;
+          display: none;
+        }
+      }
+
+      .progresstitle {
+        color: $black;
+        font-size: size(20);
+        font-weight: 500;
+
+        @include breakpoint(mobile768) {
+          font-size: size(30);
+        }
+      }
+
+      &::after {
+        @include square(30);
+        @include flex-center;
+        overflow: hidden;
+        background-image: url('data:image/svg+xml,<svg width="58" height="59" viewBox="0 0 58 59" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="29" cy="29.5001" r="28.5" fill="%23F3F3F3" stroke="%23191A23"/><path d="M25.6 41.5801V31.8601H16V26.2201H25.6V16.5001H31.48V26.2201H41.08V31.8601H31.48V41.5801H25.6Z" fill="%23191A23"/></svg>');
+        background-size: cover;
+      }
+
+      &:not(.collapsed) {
+        background: $secondary;
+
+        .btndescript {
+          .divider {
+            display: block;
+          }
+        }
+
+        &::after {
+          background-image: url('data:image/svg+xml,<svg width="58" height="59" viewBox="0 0 58 59" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="29" cy="29.5" r="28.5" fill="%23F3F3F3" stroke="%23191A23"/><path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black"/></svg>');
+        }
+      }
+    }
+
+    &-body {
+      padding: size(0) size(24) size(32);
+
+      @include breakpoint(tab992) {
+        padding: size(0) size(60) size(30);
+      }
+    }
+
+    &-header:has(:not(.collapsed))~.accordion-collapse {
+      background: $secondary;
+    }
+  }
+}
+
+.ourteam {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(70) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+}
+
+.testimonial {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(70) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+
+  .testimonialdetail {
+    background: $primary;
+    @include radius(45);
+    padding: size(48) size(0);
+
+    @include breakpoint(tab992) {
+      padding: size(84) size(0) size(68);
+    }
+
+    .swiper {
+      .swiper-slide {
+        @include breakpoint(tab992) {
+          min-width: size(400);
+
+          @include breakpoint(desktop1800) {
+            min-width: size(606);
+          }
+        }
+      }
+
+      .swiper-slide-active {
+        .cardtestimonial {
+          &-header {
+            @include setBgColor($white, $primary);
+            @include border(solid, 2, $white);
+
+            &::after {
+              content: url('data:image/svg+xml,<svg width="56" height="30" viewBox="0 0 56 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M54.5484 1.22621L28 29.1787L1.45164 1.22621L54.5484 1.22621Z" fill="%23FFFFFF" stroke="white"/></svg>');
+            }
+          }
+        }
+      }
+
+      &-button-next,
+      &-button-prev,
+      .swiper-pagination {
+        position: static;
+      }
+
+      .swiper-pagination {
+        @include flex-center;
+        gap: size(10);
+
+        .swiper-pagination-bullet {
+          @include radius(0);
+          position: relative;
+          @include square(14);
+          @include flex-center;
+          background: transparent;
+          margin: 0;
+
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml,<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path id="Vector" d="M17.9986 5.53472L35.5997 0.349121L30.464 18.0001L35.5997 35.6012L17.9986 30.4655L0.347656 35.6012L5.53325 18.0001L0.347656 0.349121L17.9986 5.53472Z" fill="%23669AFF" /></g><defs><clipPath><rect width="36" height="36" fill="white" /></clipPath></defs></svg>');
+            background-size: contain;
+            @include square(14);
+            z-index: 1;
+          }
+        }
+      }
+
+      &-button-next,
+      &-button-prev {
+        svg {
+          path {
+            fill-opacity: 1;
+          }
+        }
+
+        &.swiper-button-disabled {
+          svg {
+            path {
+              fill-opacity: 0.3;
+            }
+          }
+        }
+
+        &::after {
+          content: '';
+          font-size: size(0);
+          @include square(0);
+          display: none;
+        }
+      }
+
+      .slideractions {
+        @include flex-center-between;
+        margin-top: size(64);
+
+        @include breakpoint(tab992) {
+          margin-top: size(124);
+        }
+      }
+    }
+  }
+}
+
+.contactus {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(70) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+
+  .contactinfo {
+    background: $grey;
+    @include radius(45);
+    padding: size(40) size(12) size(80);
+  }
+
+  .contactform {
+    .form-label {
+      font-size: size(16);
+    }
+
+    .form-control {
+      @include border(solid, 1, $primary);
+      @include radius(8);
+      @include w100;
+      padding: size(11) size(16);
+
+      &::placeholder {
+        color: $textplaceholder;
+      }
+
+      &:focus {
+        border-color: $secondary;
+      }
+    }
+
+    .radioboxes {
+      @include flex;
+      gap: size(35);
+
+      .form-check {
+        padding-left: size(0);
+
+        &-input:checked {
+          ~.form-check-label {
+            &::after {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+
+        &-label {
+          cursor: pointer;
+          position: relative;
+          padding-left: size(40);
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+          }
+
+          &::before {
+            left: 0;
+            top: 50%;
+            @include translateY(-50%);
+            background: $white;
+            @include square(24);
+            @include border(solid, 1, $primary);
+            @include circle;
+            @include transitionsall;
+          }
+
+          &::after {
+            @include square(12);
+            @include circle;
+            background: $secondary;
+            left: size(6);
+            border-right: 0;
+            top: 50%;
+            @include translateY(-50%);
+            opacity: 0;
+            visibility: hidden;
+            @include transitiontransform;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  border-color: $danger !important;
+  background: $white;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: $success !important;
+  background: $white;
+}
+
+.form-check-input.is-invalid~.form-check-label,
+.was-validated .form-check-input:invalid~.form-check-label {
+  &::before {
+    border-color: $danger !important;
+  }
+}
+
+.proposal {
+  padding: size(0) size(0) size(48);
+
+  @include breakpoint(tab992) {
+    padding: size(0) size(0) size(70);
+  }
+
+  .proposalinfo {
+    background: $grey;
+    @include radius(45);
+
+    @include breakpoint(tab992) {
+      max-height: size(394);
+    }
+
+    .leftinfo {
+      @include flex-column;
+      gap: size(25);
+
+      .info {
+        max-width: size(500);
+      }
+    }
+
+    .proposal-thumbnail {
+      @include flex-center;
+      @include w100;
+      overflow: hidden;
+
+      @include breakpoint(tab992) {
+        max-height: size(394);
+      }
+    }
+  }
+}
