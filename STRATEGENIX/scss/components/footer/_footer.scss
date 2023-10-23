@@ -1,0 +1,40 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.footer {
+  background: $sectionbg-1;
+  position: relative;
+  z-index: 1;
+  margin-top: size(-150);
+  padding-top: size(230);
+
+  &-content {
+    position: relative;
+    z-index: 100;
+  }
+
+  &-detail {
+    @include flex-center-column;
+    gap: size(24);
+    padding-bottom: size(40);
+  }
+
+  .copyright {
+    @include flex-center-column;
+    gap: size(24);
+    padding: size(24) 0;
+    text-align: center;
+
+    .textcopyright {
+      color: $textprimary;
+      font-family: $sansFont;
+      font-size: size(14);
+      font-weight: 400;
+
+      span {
+        color: inherit;
+        font: inherit;
+      }
+    }
+  }
+}

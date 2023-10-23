@@ -1,0 +1,466 @@
+@use '../global' as *;
+@use '../partials' as *;
+
+.hero {
+  &-content {
+    @include flex-column;
+    gap: size(40);
+    padding: size(32) 0;
+
+    .titlebox {
+      .icontext {
+        @include flex-center-vert;
+
+        .icon {
+          width: size(90);
+          height: size(45);
+          @include flex-center;
+          overflow: hidden;
+        }
+
+        .display-1 {
+          color: $primary;
+        }
+      }
+    }
+
+    .info {
+      max-width: size(680);
+    }
+
+    .getstarted {
+      max-width: size(210);
+    }
+  }
+}
+
+.ourclients {
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+}
+
+.strategenix {
+  &-content {
+    background: url(../images/sectionbg/mapbase.svg) no-repeat center center/cover;
+  }
+
+  &-details {
+    padding: size(32) 0 size(80);
+
+    @include breakpoint(mobile768) {
+      padding: size(32) 0 size(112);
+    }
+  }
+}
+
+.aboutsection {
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+
+  .aboutinfo {
+    @include flex-column;
+    gap: size(48);
+  }
+
+  .aboutdescript {
+    @include flex-column;
+
+    .h2 {
+      font-size: size(36);
+      font-weight: 700;
+    }
+
+    .abouttext {
+      font-weight: 700;
+      letter-spacing: size(2);
+      text-transform: uppercase;
+      max-width: 90%;
+    }
+  }
+}
+
+.cardsection {
+  background: $sectionbg-1;
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+}
+
+.whychooseus {
+  background: url(../images/sectionbg/section-bg.svg) no-repeat center center/cover;
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+
+  @include breakpoint(desktop1600) {
+    padding: size(150) 0 size(210);
+  }
+
+  &-details {
+    @include flex-column;
+    gap: size(32);
+    margin-bottom: size(48);
+
+    @include breakpoint(tab992) {
+      margin-bottom: size(80);
+    }
+
+    @include breakpoint(desktop1400) {
+      margin-bottom: size(96);
+    }
+
+    .titlebox {
+      .h1 {
+        color: $white;
+      }
+    }
+
+    .info {
+      .text {
+        color: $white;
+      }
+    }
+  }
+
+  .arrowinfo {
+    margin-bottom: size(40);
+  }
+
+  .swiper {
+
+    &-button-next,
+    &-button-prev {
+      background: $cardbg-2;
+      @include radius(8);
+      @include flex-center;
+      @include square(48);
+      padding: size(12);
+      position: static;
+
+      &::after {
+        content: '';
+        font-size: size(0);
+        @include square(0);
+        display: none;
+      }
+
+      @include hover {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.ourservices {
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+
+  @include breakpoint(desktop1600) {
+    padding: size(150) 0 size(210);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(32);
+    text-align: center;
+
+    .h1 {
+      font-weight: 700;
+    }
+
+    .info {
+      max-width: size(543);
+    }
+
+    .text {
+      font-weight: 500;
+    }
+  }
+}
+
+.reviews {
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+
+  @include breakpoint(desktop1600) {
+    padding: size(150) 0 size(210);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+
+    .titlebox {
+      max-width: size(332);
+      margin-inline: auto;
+      text-align: center;
+    }
+  }
+
+}
+
+.faqs {
+  background: $sectionbg-1;
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+
+  &-left {
+    @include flex-column;
+    gap: size(32);
+  }
+
+  &-right {
+    .accordion {
+      @include flex-column;
+      gap: size(10);
+
+      &-item {
+        background: transparent;
+        @include border(solid, 1, $faqborder);
+        @include radius(10);
+        padding: size(24) size(16);
+
+        @include breakpoint(desktop1600) {
+          padding: size(25) size(18) size(25) size(33);
+        }
+
+        &:first-of-type,
+        &:last-of-type {
+          .accordion-button {
+            @include radius(0);
+          }
+        }
+      }
+
+      &-button {
+        font-size: size(20);
+        font-weight: 700;
+
+        &::after {
+          @include square(24);
+          background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1904 11V5H13.1904V11H19.1904V13H13.1904V19H11.1904V13H5.19043V11H11.1904Z' fill='%23282943'/%3E%3C/svg%3E%0A");
+          background-size: cover;
+        }
+
+        &:not(.collapsed) {
+          background: transparent;
+          border: none;
+          box-shadow: none;
+
+          &::after {
+            background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.7762 12L6.5336 7.75736L7.94781 6.34315L12.1904 10.5858L16.4331 6.34315L17.8473 7.75736L13.6047 12L17.8473 16.2426L16.4331 17.6569L12.1904 13.4142L7.94781 17.6569L6.5336 16.2426L10.7762 12Z' fill='%23282943'/%3E%3C/svg%3E ");
+          }
+        }
+      }
+
+      &-body {
+        padding: size(24) size(0) size(0);
+
+        @include breakpoint(desktop1600) {
+          padding: size(48) size(0) size(0);
+        }
+
+        .info {
+          max-width: size(600);
+        }
+      }
+    }
+  }
+}
+
+.getstarted {
+  position: relative;
+  padding: size(64) 0 0;
+  z-index: 2;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0 0;
+  }
+
+  &-content {
+    background: $primary;
+    @include radius(40);
+    padding: size(64) size(16);
+
+    @include breakpoint(mobile768) {
+      padding: size(80) size(20);
+    }
+
+    @include breakpoint(tab992) {
+      padding: size(96) size(20);
+    }
+
+    @include breakpoint(desktop1400) {
+      padding: size(109) size(198) size(145) size(198);
+    }
+  }
+
+  &-details {
+    @include flex-center-column;
+    gap: size(48);
+    text-align: center;
+
+    .display-4 {
+      color: $white;
+    }
+
+    .started {
+      max-width: size(220);
+    }
+  }
+}
+
+.contact {
+  padding: size(64) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(80) 0;
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(96) 0;
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) 0;
+  }
+
+  &-left {
+    @include flex-column;
+    gap: size(32);
+  }
+
+  .contactform {
+    @include flex-column;
+    gap: size(10);
+
+    .form-label {
+      font-size: size(20);
+      font-weight: 700;
+    }
+
+    .form-control {
+      @include border(solid, 1, $inputborder);
+      @include radius(8);
+      @include w100;
+      font-weight: 500;
+      padding: size(11) size(16);
+
+      &::placeholder {
+        color: $textplaceholder;
+      }
+
+      &:focus {
+        border-color: $primary;
+      }
+    }
+  }
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  border-color: $danger !important;
+  background: $white;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: $success !important;
+  background: $white;
+}

@@ -1,0 +1,14 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.my-badge {
+  @include setBgColor($cardbg-1, $textprimary);
+  @include radius(60);
+  font-size: size(14);
+  font-weight: 700;
+  display: inline-block;
+  padding: size(10) size(15);
+  text-align: center;
+  min-width: size(96);
+  max-width: size(150);
+}

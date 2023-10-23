@@ -1,0 +1,153 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.aboutcard {
+  background: $white;
+  @include border(solid, 1, $cardborder);
+  @include radius(10);
+  @include flex-column;
+  gap: size(16);
+  padding: size(16);
+  @include h100;
+  
+  @include breakpoint(mobile768) {
+    padding: size(24);
+  }
+
+  .cardthumbnail {
+    @include radius(10);
+    @include flex-center;
+    overflow: hidden;
+    
+    img {
+      @include transitiontransform;
+
+      @include hover {
+        @include scale(1.05);
+      }
+    }
+  }
+}
+
+.cardchoose {
+  @include wh100;
+  background: $cardbg-2;
+  @include radius(12);
+  @include flex-column;
+  gap: size(40);
+  padding: size(20) size(16) size(48);
+
+  @include breakpoint(tab992) {
+    max-width: size(344);
+    padding: size(40) size(32) size(64);
+  }
+
+  .chooseicon {
+    @include square(46);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  .choosetitle {
+    color: $cardbg-1;
+    font-weight: 700;
+    min-height: size(58);
+  }
+  
+  .info {
+    min-height: size(72);
+  }
+
+  .text {
+    color: $cardbg-1;
+  }
+}
+
+.cardservices {
+  background: $white;
+  @include border(solid, 1, $cardborder);
+  @include radius(18);
+  @include flex-column;
+  gap: size(32);
+  padding: size(32);
+  @include h100;
+
+  &-header {
+    @include flex-center-vert;
+    gap: size(16);
+
+    .cardservices-icon {
+      @include square(54);
+      @include flex-center;
+      overflow: hidden;
+    }
+  
+    .servicetitle {
+      font-size: size(20);
+      
+      @include breakpoint(desktop1400) {
+        font-size: size(24);
+      }
+    }
+  }
+
+  &-body {
+    .servicetext {
+      font-weight: 500;
+      min-height: size(168);
+    }
+  }
+}
+
+.cardreview {
+  position: relative;
+  @include h100;
+  
+  &-details {
+    background: $cardbg-1;
+    @include radius(10);
+    overflow: hidden;
+    padding: size(32) size(32) size(0);
+    position: relative;
+
+    .descriptions {
+      @include flex-column;
+      gap: size(72);
+      padding: size(0) size(0) size(32);
+
+      .info {
+        max-width: size(376);
+        min-height: size(144);
+
+        .text {
+          font-weight: 500;
+        }
+      }
+
+      .author {
+        color: $textlink;
+        font-size: size(14);
+        font-weight: 700;
+        min-height: size(42);
+      }
+    }
+
+    .cardicon {
+      width: size(90);
+      height: size(24);
+      @include flex-center;
+      position: absolute;
+      bottom: 0;
+      right: size(24);
+    }
+  }
+
+  .quoteicon {
+    @include square(32);
+    @include flex-center;
+    overflow: hidden;
+    position: absolute;
+    top: size(-16);
+    left: size(24);
+  }
+}

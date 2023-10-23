@@ -1,0 +1,11 @@
+@use '../global' as *;
+@use '../partials' as *;
+
+.errormain {
+  @include flex-center;
+  @include w100;
+  min-height: 100vh;
+  overflow: hidden;
+  
+
+}

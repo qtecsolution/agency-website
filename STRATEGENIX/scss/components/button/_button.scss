@@ -1,0 +1,90 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  @include transparent-button;
+  cursor: pointer;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  @include transitionsall;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.btn-hamburger {
+  @include square(48);
+  @include flex-center;
+  font-size: size(24);
+  overflow: hidden;  
+
+  @include hover {
+    color: $primary;
+  }
+}
+
+.btn-quote {
+  @include setBgColor($buttonbg, $buttontext);
+  @include radius(10);
+  @include flex-center;
+  font-size: size(13);
+  font-weight: 500;
+  padding: size(10) size(16);
+  text-align: center;
+  
+  @include breakpoint(mobile768) {
+    font-size: size(16);
+    padding: size(10) size(20);
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(15) size(20);
+  }
+
+  @include hover {
+    @include setBgColor($buttontext, $buttonbg);
+  }
+}
+
+.btn-started {
+  @include setBgColor($cardbg-1, $textprimary);
+  @include radius(10);
+  @include flex-center;
+  font-size: size(13);
+  font-weight: 500;
+  padding: size(10) size(16);
+  text-align: center;
+  
+  @include breakpoint(mobile768) {
+    font-size: size(16);
+    padding: size(10) size(20);
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(15) size(20);
+  }
+
+  @include hover {
+    @include setBgColor($textprimary, $cardbg-1);
+  }
+}
+
+.btn-getstarted {
+  @include setBgColor($primary, $white);
+  @include radius(10);
+  @include flex-center;
+  font-size: size(16);
+  font-weight: 700;
+  padding: size(20);
+  text-align: center;
+
+  @include hover {
+    @include setBgColor($buttontext, $white);
+  }
+}

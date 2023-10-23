@@ -1,0 +1,35 @@
+$time: 350ms;
+
+// DEFAULT COLORS
+$white: hsl(0, 0%, 100%); //#ffffff
+$black: hsl(0, 0%, 0%); //#000000
+
+// THEME-COLORS
+$primary: hsl(236, 61%, 54%); //#424BD1
+
+
+// BACKGROUND-COLORS
+$sectionbg-1: hsl(0, 0%, 98%); //#F9F9F9
+$cardbg-1: hsl(236, 100%, 97%); //#F0F1FF
+$cardbg-2: hsl(250, 41%, 17%); //#201A3E
+
+// TEXT-COLORSF
+$textlink: hsl(0, 0%, 13%); //#222222
+$textprimary: hsl(238, 25%, 21%); //#282943
+$buttonbg: hsl(235, 100%, 98%); //#F4F5FF
+$buttontext: hsl(247, 56%, 18%); //#1C1548
+$textplaceholder: hsl(0, 0%, 78%); //#C6C6C6
+
+
+$danger: hsl(0, 91%, 54%); //#F51F1F
+$success: hsl(152, 69%, 31%); //#198754
+
+// BORDER-COLORS
+$inputborder: hsl(0, 0%, 89%); //#E4E4E4
+$cardborder: hsl(0, 0%, 94%); //#F0F0F0
+$faqborder: hsl(0, 0%, 90%); //#E5E5E5
+
+// SHADOWS
+
+// BOX-SHADOWS
+$headershadow: 0 .25rem 1.875rem rgba($black, 0.1);
